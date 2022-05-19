@@ -4,3 +4,7 @@ language = "en"
 multilingual = false
 src = "src"
 title = "KKKKKK"
+
+[output.html]
+default-theme = "dark"
+
