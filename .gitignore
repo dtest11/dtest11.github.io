@@ -1,0 +1,6 @@
+public
+_book/
+book/
+.idea/
+.vscode/
+node_modules/
