@@ -1,0 +1,2 @@
+run:
+	mdbook serve -o
