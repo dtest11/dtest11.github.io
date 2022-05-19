@@ -12,11 +12,11 @@
         * [schdule](go/runtime/schdule.md)
     
 
-- [tcpppppp](tcp/readme.md)
+- [tcpppppp](tcp/README.md)
     * [http2](tcp/http2.md)
     * [net_epoll](tcp/net_epoll.md)
     * [net_epoll](tcp/net_epoll.md)
-    * [超时/重传](tcp/tcp_超时与重传.md)
+    * [超时/重传](tcp/retry.md)
 
 - [alggggg](alg/README.md)
     * [bfs](alg/bfs.md)
@@ -27,7 +27,5 @@
 
 - [kv](redis/README.md)
 -----------
-
-[Contributors](https://rust-lang.github.io/mdBook/guide/installation.html)
 
 
