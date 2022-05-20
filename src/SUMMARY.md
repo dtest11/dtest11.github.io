@@ -6,6 +6,8 @@
 
 * [jwt](sys/jwt.md)
 * [熔断](sys/breaker.md)
+* [限流](sys/limit.md)
+
 
 
 # language Guide
