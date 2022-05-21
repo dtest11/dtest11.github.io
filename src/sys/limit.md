@@ -106,11 +106,109 @@
      
      ![alt 属性文本](https://static001.geekbang.org/infoq/47/47bba937ecc3f81b975e9a59a743b3d4.png)
      [vs](https://m.haicoder.net/note/nginx-interview/nginx-interview-nginx-leaky-bucket.html)
-        
+     
      除了要求能够限制数据的平均传输速率外，还要求允许某种程度的突发传输
 
+     > 相比于 TokenBucket 中，只要桶内还有剩余令牌，调用方就可以一直消费的策略。Leaky Bucket 相对来说更加严格，调用方只能严格按照预定的间隔顺序进行消费调用
 
+- Leaky Bucket
+```go
 
+// Copyright (c) 2016,2020 Uber Technologies, Inc.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
+package ratelimit // Package ratelimit import "go.uber.org/ratelimit"
+
+import (
+	"sync"
+	"time"
+)
+
+type mutexLimiter struct {
+	sync.Mutex
+	last       time.Time
+	sleepFor   time.Duration
+	perRequest time.Duration
+	maxSlack   time.Duration
+	clock      Clock
+}
+
+// newMutexBased returns a new atomic based limiter.
+func newMutexBased(rate int, opts ...Option) *mutexLimiter {
+	// TODO consider moving config building to the implementation
+	// independent code.
+	config := buildConfig(opts)
+	perRequest := config.per / time.Duration(rate)
+	l := &mutexLimiter{
+		perRequest: perRequest,
+		maxSlack:   -1 * time.Duration(config.slack) * perRequest,
+		clock:      config.clock,
+	}
+	return l
+}
+
+// Take blocks to ensure that the time spent between multiple
+// Take calls is on average time.Second/rate.
+func (t *mutexLimiter) Take() time.Time {
+	t.Lock()
+	defer t.Unlock()
+
+	now := t.clock.Now()
+
+	// If this is our first request, then we allow it.
+	if t.last.IsZero() {
+		t.last = now
+		return t.last
+	}
+
+	// sleepFor calculates how much time we should sleep based on
+	// the perRequest budget and how long the last request took.
+	// Since the request may take longer than the budget, this number
+	// can get negative, and is summed across requests.
+	t.sleepFor += t.perRequest - now.Sub(t.last)
+
+	// We shouldn't allow sleepFor to get too negative, since it would mean that
+	// a service that slowed down a lot for a short period of time would get
+	// a much higher RPS following that.
+	if t.sleepFor < t.maxSlack {
+		t.sleepFor = t.maxSlack
+	}
+
+	// If sleepFor is positive, then we should sleep now.
+	if t.sleepFor > 0 {
+		t.clock.Sleep(t.sleepFor)
+		t.last = now.Add(t.sleepFor)
+		t.sleepFor = 0
+	} else {
+		t.last = now
+	}
+
+	return t.last
+}
+
+```
+- token bucket
+[https://pandaychen.github.io/2020/04/05/GOLANG-X-RATELIMIT-ANALYSIS/](https://pandaychen.github.io/2020/04/05/GOLANG-X-RATELIMIT-ANALYSIS/)
+
+- 自适应限流
+
+思路： 只要我们的 CPU 负载超过 80% 的时候，获取过去 5s 的最大吞吐数据，然后再统计当前系统中的请求数量，只要当前系统中的请求数大于最大吞吐那么我们就丢弃这个请求。
 
 [https://juejin.cn/post/6965406931066290206](https://juejin.cn/post/6965406931066290206)
