@@ -5,4 +5,6 @@ d:
 	git add .
 	git commit -m "pub"
 	git push
+	git status
+	git log
 
