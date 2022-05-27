@@ -101,6 +101,20 @@ BenchmarkFib10-8        3578236           322 ns/op
 2. 3578236 ： 该函数执行了这么多次
 3. 322 ns/op ：每次循环需要 322 纳秒
 
+
+### diff
+benchstat
+
+
+
+intall ```go install golang.org/x/perf/cmd/benchstat@latest ```
+[https://pkg.go.dev/golang.org/x/perf/cmd/benchstat#section-readme](https://pkg.go.dev/golang.org/x/perf/cmd/benchstat#section-readme)
+
+go test -v -bench=.  -cpu=1,2,4,8 >> old.txt
+go test -v -bench=.  -cpu=1,2,4,8 >> new.txt
+
+benchstat old.txt new.txt
+
 #### 引用
 
 [https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go](https://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go)
