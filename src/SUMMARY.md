@@ -17,6 +17,8 @@
       - [paxos](TODO)
 
 # message queue
+* [nsqd](TODO)
+   - [demo](msg/nsqd/deploy.md)
 * [nats](TODO)
    - [nats.js.publish](msg/nats.js.publish.md)
    - [nats.js.subscribe](msg/nats.js.subscribe.md)
