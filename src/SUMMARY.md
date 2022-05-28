@@ -20,6 +20,7 @@
 * [nsq](TODO)
    - [deploy](message_queue/nsq/deploy.md)
    - [nsq_nsqlookupd](message_queue/nsq/nsq_producer.md)
+   - [consumer](message_queue/nsq/consumer.md)
 * [nats](TODO)
    - [nats.js.publish](message_queue/nats.js.publish.md)
    - [nats.js.subscribe](message_queue/nats.js.subscribe.md)
