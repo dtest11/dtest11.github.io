@@ -3,7 +3,7 @@ run:
 d:
 	git status
 	git add .
-	git commit -m "pub"
+	git commit -m "fuck day"
 	git push
 	git status
 	git log

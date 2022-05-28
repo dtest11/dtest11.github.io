@@ -19,7 +19,7 @@
 # message queue
 * [nsq](TODO)
    - [deploy](message_queue/nsq/deploy.md)
-   - [nsq](message_queue/nsq/nsq.md)
+   - [nsq_nsqlookupd](message_queue/nsq/nsq_producer.md)
 * [nats](TODO)
    - [nats.js.publish](message_queue/nats.js.publish.md)
    - [nats.js.subscribe](message_queue/nats.js.subscribe.md)
