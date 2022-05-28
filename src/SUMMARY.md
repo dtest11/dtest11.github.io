@@ -17,16 +17,16 @@
       - [paxos](TODO)
 
 # message queue
-* [nsqd](TODO)
-   - [deploy](msg/nsqd/deploy.md)
-   - [nsqlookd](msg/nsqd/nsq.md)
+* [nsq](TODO)
+   - [deploy](message_queue/nsq/deploy.md)
+   - [nsq](message_queue/nsq/nsq.md)
 * [nats](TODO)
-   - [nats.js.publish](msg/nats.js.publish.md)
-   - [nats.js.subscribe](msg/nats.js.subscribe.md)
-   - [nats-request-reply](msg/nats-request-reply.md)
-   - [nats.storage.md](msg/nats.storage.md)
+   - [nats.js.publish](message_queue/nats.js.publish.md)
+   - [nats.js.subscribe](message_queue/nats.js.subscribe.md)
+   - [nats-request-reply](message_queue/nats-request-reply.md)
+   - [nats.storage.md](message_queue/nats.storage.md)
 * [kafka](TODO)
-    - [kafak.transaction](msg/kafak.transaction.md)
+    - [kafak.transaction](message_queue/kafak.transaction.md)
 
 # language Guide
 

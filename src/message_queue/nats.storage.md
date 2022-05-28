@@ -175,7 +175,7 @@ func (o *consumer) getNextMsg() (subj string, hdr, msg []byte, seq uint64, dc ui
 					continue
 				}
 			}
-			// We have the msg here.
+			// We have the message_queue here.
 			return subj, hdr, msg, seq, dc, ts, nil
 		}
 		// We got an error here. If this is an EOF we will return, otherwise

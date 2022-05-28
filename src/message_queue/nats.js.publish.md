@@ -49,7 +49,7 @@ func (mset *stream) processJetStreamMsg(subject, reply string, hdr, msg []byte, 
 没有订阅者直接返回，然后存储消息
 ```go
 
-// Store actual msg.
+// Store actual message_queue.
 	if lseq == 0 && ts == 0 {
 		seq, ts, err = store.StoreMsg(subject, hdr, msg)
 	} else {
