@@ -1,10 +1,5 @@
 # k8s
 
-deploy
-```bash
-minikube start --image-mirror-country cn \
-    --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.6.0.iso \
-    --registry-mirror=https://o1804gsy.mirror.aliyuncs.com \
-    --vm-driver=virtualbox
+##  istio
+1. [https://jimmysong.io/istio-handbook/concepts/what-is-service-mesh.html](https://jimmysong.io/istio-handbook/concepts/what-is-service-mesh.html)
 
-```

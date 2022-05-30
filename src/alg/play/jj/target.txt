@@ -1,0 +1,16 @@
+/home/code:17
+/home/code/Desktop/happy_coding:10
+/home/code/Desktop:9
+/usr/local/go:3
+/home/code/Downloads/hello:3
+/home/code/Desktop/happy_coding/jj:3
+/usr/lib:2
+/usr/local/go/bin:1
+/usr/lib/go:1
+/home/code/.autojump/bin:1
+/home/code/Desktop/hello:1
+/home/code/.local/share:1
+/home/code/Downloads:1
+/usr/local:1
+/usr/lib/go-1.16:1
+/var/lib/dpkg/updates:1
