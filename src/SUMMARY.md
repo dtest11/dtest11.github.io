@@ -2,6 +2,9 @@
 
 [Introduction](README.md)
 
+# alg
+* [link](alg/README.md)
+
 # Microservices
 
 * [jwt](sys/jwt.md)
@@ -53,8 +56,7 @@
     * [net_epoll](tcp/net_epoll.md)
     * [超时/重传](tcp/retry.md)
 
-- [alggggg](alg/README.md)
-    * [bfs](alg/bfs.md)
+
 
 - [database](database/mysql/README.md)
     * [分库分表](database/分库分表.md)
