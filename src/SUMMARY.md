@@ -64,6 +64,9 @@
     * [CMU 15-445 数据库学习](database/cmu_15_445/readme.md)
 
 - [kv](redis/README.md)
+    * [aof](redis/redis_aof.md)
+    * [lock](redis/redis_lock.md)
+    * [skiplist](redis/redis_skiplist.md)
 -----------
 
 

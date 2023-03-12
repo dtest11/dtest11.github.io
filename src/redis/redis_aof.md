@@ -1,9 +1,3 @@
----
-title: Redis_aof_rdb
-date: '2021-02-27T03:30:24.000Z'
-tags:
-  - redis
----
 
 # run redis
 

@@ -1,9 +1,3 @@
----
-title: redis-skiplist
-date: '2020-01-06T22:37:02.000Z'
-tags:
-  - redis
----
 
 # redis-skiplist
 
