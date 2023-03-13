@@ -1,10 +1,12 @@
-run:
-	mdbook serve -o
-d:
-	git status
-	git add .
-	git commit -m "fuck day"
-	git push
-	git status
-	git log
-
+.PHONY: deploy
+deploy: book
+	@echo "====> deploying to github"
+	rm -rf /tmp/book
+	git worktree add -f /tmp/book gh-pages
+	mdbook build
+	rm -rf /tmp/book/*
+	cp -rp book/* /tmp/book/
+	cd /tmp/book && \
+        git add -A && \
+        git commit -m "deployed on $(shell date) by ${USER}" && \
+        git push origin gh-pages
