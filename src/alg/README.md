@@ -1,2 +1,1 @@
-# alggggg
-[link](https://dtest11.gitbook.io/untitled/)
+<a href="https://dtest11.github.io/alg" target="_blank">Alg</a>
