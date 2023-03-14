@@ -38,7 +38,7 @@
 
 # language Guide
 
-- [goooooo](cli/README.md)
+- [goooooo](go/defer.md)
     - [defer](go/defer.md)
     - [new/make](go/go_new_make.md)
     - [error](go/golang-errors.md)
