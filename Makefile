@@ -10,3 +10,5 @@ deploy: book
         git add -A && \
         git commit -m "deployed on $(shell date) by ${USER}" && \
         git push origin gh-pages
+run:
+	mdbook serve

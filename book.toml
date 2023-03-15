@@ -7,4 +7,5 @@ title = "KKKKKK"
 
 [output.html]
 default-theme = "dark"
-
+[output.html.fold]
+enable = true
