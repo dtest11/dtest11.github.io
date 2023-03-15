@@ -3,7 +3,7 @@ authors = ["dtest11"]
 language = "en"
 multilingual = false
 src = "src"
-title = "KKKKKK"
+title = "blog"
 
 [output.html]
 default-theme = "dark"
