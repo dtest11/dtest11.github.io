@@ -16,4 +16,9 @@
   * 数据访问的频率来选择被淘汰数据的(最不经常使用算法)
   * [go-lfu](https://github.com/dgrijalva/lfu-go/blob/master/lfu.go)
 
+## redis 高可用
+* 主从复制如何实现的？ replice of
+* 如何避免数据丢失：可用节点不够的时候，主节点拒绝写入
+* 同步写入，异步复制
+* 主从如何故障自动切换
 

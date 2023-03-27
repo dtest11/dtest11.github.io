@@ -96,3 +96,7 @@ func sysmon() {
 2. 减少不必要的数据分配
 3. sync.Pool 数据复用（href)[[深度分析 Golang sync.Pool 底层原理 | 编程沉思录 (cyhone.com)](https://www.cyhone.com/articles/think-in-sync-pool/)]
 4. 调整GOGC参数
+
+## [目前 Go 语言的 GC 还存在哪些问题](https://golang.design/go-questions/memgc/history/)
+* Mark Assist 停顿时间过长 
+* Sweep 停顿时间过长

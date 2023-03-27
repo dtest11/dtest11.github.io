@@ -1,6 +1,3 @@
-
-# defer
-
 ## defer 和return
 
 return 中返回的值 是不受defer 中的逻辑影响的，具体看个例子, return 是先执行的
@@ -33,50 +30,73 @@ defer中执行counter= 20
 */
 ```
 
-## defer 中传递参数
+## defer 中传递参数规则
 
+### 传递函数立即求值
+```go
+func cal(a, b int) int {
+	fmt.Println(a, b)
+	return a + b
+}
+
+func main() {
+	a, b := 3, 4
+
+	defer cal(cal(a, b), a)
+	//里面 cal(a,b)在执行到defer的时候会立即求值，确定参数
+	// 后续对a,b的修改不会影响a,b,也不会影响外层cal
+	a = 100
+	b = 8
+
+	fmt.Println("hello")
+}
+
+/**
+3 4
+hello
+7 3
+
+*/
+```
+
+### not work 
+```go
+func f2() (r int) { 
+    t := 5 
+    defer func() { 
+        t = t + 5 
+    }()
+    return t
+}
+```
+
+### 函数方式传递参数是 传递指针的拷贝
 ```go
 package main
 
-import "fmt"
+import  "fmt"
 
-func add(a, b int) int {
-    sum := a + b
-    fmt.Println("sum=", sum, "a=", a, "b=", b)
-    return sum
+func add(a, b int, note int) {
+	fmt.Printf("第%d次调用:%d, %d \n", note, a, b)
 }
+
 func main() {
+	a, b := 3, 4
 
-    //var whatever [5]struct{}
-    a, b := 1, 2
+	defer add(a, b, 0) // 3,4
 
-    defer add(a, b)
+	defer func() {
+		add(a, b, 1) // 7,8
+	}() //传递的是参数指针== 值拷贝：拷贝的参数指针
 
-    defer func() {
-        add(a, b)
-    }() // a,b 被立即拷贝到函数执行的地方
+	defer func(a, b int) {
+		add(a, b, 2) // 7,8
+	}(a, b) //传递的是参数指针== 值拷贝：拷贝的参数指针
 
-    defer func(a, b int) {
-        fmt.Println("defer func")
-        add(a, b)
-        fmt.Println("-------")
-    }(a, b) // 外面，a,b 操作会影响 最后的传递值， a=11, b= 22
+	a = 7
+	b = 8
 
-    a += 10
-    b += 20
-
-    defer add(a, b)
+	defer add(a, b, 3)
 }
-
-/****
-sum= 33 a= 11 b= 22
-defer func
-sum= 3 a= 1 b= 2
--------
-sum= 33 a= 11 b= 22
-sum= 3 a= 1 b= 2
-
-
-*/
 ```
 
