@@ -41,6 +41,7 @@
     - [cross_compile](go/cross_compile.md)
     - [benchmark](go/go-benchmark.md)
     - [directive](go/directive.md)
+    - [garbage_collect](go/garbage_collect.md)
     - [面试](go/面试.md)
 
 - [tcpppppp](tcp/README.md)
