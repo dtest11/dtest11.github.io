@@ -1,11 +1,11 @@
----
-title: debug-k8s
-date: '2020-01-03T22:40:01.000Z'
-tags:
-  - k8s
----
+```text
 
-# debug-k8s
+docker run  --restart=unless-stopped \
+  -p 80:80 -p 443:443 \
+  --privileged \
+  rancher/rancher:v2.6.9
+  
+```
 
 ![Alt text](https://lin19999.oss-cn-beijing.aliyuncs.com/flower.svg)
 

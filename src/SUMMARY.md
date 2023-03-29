@@ -30,7 +30,7 @@
 
 # language Guide
 
-- [goooooo](go/defer.md)
+- [golang](go/defer.md)
     - [defer](go/defer.md)
     - [new/make](go/go_new_make.md)
     - [error](go/golang-errors.md)
@@ -44,7 +44,7 @@
     - [garbage_collect](go/garbage_collect.md)
     - [面试](go/面试.md)
 
-- [tcpppppp](tcp/README.md)
+- [tcp](tcp/README.md)
     * [http2](tcp/http2.md)
     * [net_epoll](tcp/net_epoll.md)
     * [超时/重传](tcp/retry.md)
@@ -56,7 +56,7 @@
     * [mysql](database/mysql/README.md)
     * [CMU 15-445 数据库学习](database/cmu_15_445/readme.md)
 
-- [kv](redis/README.md)
+- [redis](redis/README.md)
     * [aof](redis/redis_aof.md)
     * [lock](redis/redis_lock.md)
     * [skiplist](redis/redis_skiplist.md)

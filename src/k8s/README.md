@@ -1,5 +1,7 @@
 # k8s
-
+## deploy
+* kubespray
+* [sealer](https://github.com/sealerio/sealer#quick-start)
 ##  istio
 1. [https://jimmysong.io/istio-handbook/concepts/what-is-service-mesh.html](https://jimmysong.io/istio-handbook/concepts/what-is-service-mesh.html)
 
