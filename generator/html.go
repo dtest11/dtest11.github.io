@@ -43,12 +43,12 @@ func RenderHTML(dir string) {
 			}
 			newName := strings.TrimSuffix(path, ".md")
 			newName = newName + ".html"
-			var temp = []byte(HEAD)
+			var temp = []byte(rewriteTitle(newName, HEAD))
 
 			if strings.Contains(newName, "SUMMARY") {
 				ffff, _ := filepath.Split(newName)
 				newName = filepath.Join(ffff, "index.html")
-				temp = []byte(INDEX_HEAD)
+				temp = []byte(rewriteTitle(newName, INDEX_HEAD))
 			}
 			logrus.Println(newName)
 
@@ -90,28 +90,47 @@ body {
 <body>
     `
 
-var HEAD = `<!DOCTYPE html>
+var HEAD = `
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>hello</title>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
-<style>
+    <style>
         p {
             margin-block-start: 0;
             margin-block-end: 0;
         }
-body {
-    display: block;
-    margin: 40px;
- font-family: "Consolas","Panic Sans","Bitstream Vera Sans Mono","Menlo","Microsoft Yahei",monospace;
 
-}
+        body {
+            display: block;
+            margin: 40px;
+            font-family: "Consolas", "Panic Sans", "Bitstream Vera Sans Mono", "Menlo", "Microsoft Yahei", monospace;
+
+        }
+        pre code {
+            background-color: #eee;
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+
+        code {
+            background-color: #eee;
+            width:650px;
+font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+
+        }
     </style>
 <body>
     `
 
 var END = `</body></html>`
+
+func rewriteTitle(filename string, head string) string {
+	name := filepath.Base(filename)
+	ext := filepath.Ext(name)
+	name = strings.Replace(name, ext, "", -1)
+	head = strings.Replace(head, `hello`, name, -1)
+	return head
+}
