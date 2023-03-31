@@ -1,11 +1,9 @@
 [book]
-authors = ["dtest11"]
-language = "en"
-multilingual = false
-src = "src"
-title = "blog"
+title = "Example book"
+description = "The example book covers examples."
+src = "."
 
-[output.html]
-default-theme = "dark"
+[output.html.playground]
+runnable = false
 [output.html.fold]
 enable = true
