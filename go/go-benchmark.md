@@ -1,8 +1,3 @@
----
-title: go-Benchmark
-tags:
-  - golang
----
 
 # go-benchmark
 

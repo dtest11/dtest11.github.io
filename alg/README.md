@@ -1,1 +1,51 @@
-<a href="https://dtest11.github.io/alg" target="_blank">Alg</a>
+- [linklist](linklist/linklist.md)
+    - [翻转节点](linklist/flatten.md)
+    - [中间节点](linklist/reverse.md)
+    - [环判断](linklist/circle.md)
+        - [寻找2个链表的链接点](linklist/easy/intersection/intersection.md)
+    - [mirror](linklist/mirror.md)
+    - [节点删除](linklist/delete.md)
+    - [双指针问题](rust_implement/src/two_pointers/two_pointers.md)
+        - [3sum/4sum/nsum](rust_implement/src/two_pointers/nsum.md)
+        - [two_pointers](two_pointers/partition_labels.md)
+            - [partition_labels](two_pointers/partition_labels.md)
+            - [latestTimeCatchTheBus](two_pointers/latestTimeCatchTheBus.md)
+          
+- [sort](sort/sort.md)
+    - [rust](rust_implement/src/sort/sort.md)
+- [进制转换](rust_implement/src/diget/mod.md)
+    - [Excel 表列序号](diget/titleToNumber.md)
+- [动态规划](dynamic_programming/dynamic_programming.md)
+    - [最大子序和](dynamic_programming/maximum-subarray.md)
+    - [最长递增子序列](dynamic_programming/longest-increasing-subsequence.md)
+    - [最长公共子序列](dynamic_programming/longest-common-subsequence.md)
+    - [俄罗斯套娃信封问题](dynamic_programming/russian-doll-envelopes.md)
+    - [买卖股票的最佳时机](dynamic_programming/best-time-to-buy-and-sell-stock.md)
+    - [house-robber](dynamic_programming/house-robber.md)
+
+-  [binary_search](binary_search/binary_serach.md)
+-  [幂运算](pow/pow.md)
+-  [位运算](bit/bit.md)
+-  [lfu_lru](lfu_lru/lfu/lfu.md)
+    - [lru](lfu_lru/lru/lru.md)
+-  [string](string/string.md)
+    - [罗马数字装换](string/romanint.md)
+    - [最长公共前缀](string/longestCommonPrefix.md)
+    - [有效的括号](string/valid-parentheses.md)
+    - [ 找出字符串中第一个匹配项的下标](string/find-the-index-of-the-first-occurrence-in-a-string.md)
+
+-  [array](array/array.md)
+    - [删除有序数组中的重复项](array/remove-duplicates-from-sorted-array.md)
+    - [plus-one](array/plus-one.md)
+    - [merge-sorted-array](array/merge-sorted-array.md)
+    - [杨辉三角](array/pascals-triangle.md)
+-  [四则运算](arithmetic/sqrtx.md)
+-  [tree](tree/tree.md)
+    - [对称二叉树](tree/symmetric-tree.md)
+    - [二叉树的最大深度](tree/maximum-depth-of-binary-tree.md)
+    - [将有序数组转换为二叉搜索树](tree/convert-sorted-array-to-binary-search-tree.md)
+
+
+
+    
+

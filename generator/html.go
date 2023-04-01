@@ -117,9 +117,7 @@ var HEAD = `
 
         code {
             background-color: #eee;
-            width:650px;
 font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
-
         }
     </style>
 <body>

@@ -1,3 +1,5 @@
+SHELL := /bin/zsh
+
 .PHONY: deploy
 deploy: book
 	@echo "====> deploying to github"
@@ -12,3 +14,6 @@ deploy: book
         git push origin gh-pages
 build:
 	rm -rf book && go  run github.com/dtest11/alg/generator
+serve:
+	rm -rf book && go  run github.com/dtest11/alg/generator
+	cd book && python3 -m http.server
