@@ -14,7 +14,7 @@ import (
 )
 
 func mdToHTML(md []byte) []byte {
-	p := parser.NewWithExtensions(parser.CommonExtensions)
+	p := parser.NewWithExtensions(parser.CommonExtensions | parser.Tables)
 	doc := p.Parse(md)
 	//htmlFlags := html.CommonFlags | html.HrefTargetBlank
 	htmlFlags := html.FlagsNone

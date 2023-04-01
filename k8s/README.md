@@ -1,4 +1,8 @@
 # k8s
+- [network namespace](network.md)
+- [面试题目](interview.md)
+- [K8s操作命令](K8s操作命令.md)
+
 ## deploy
 * kubespray
 * [sealer](https://github.com/sealerio/sealer#quick-start)
