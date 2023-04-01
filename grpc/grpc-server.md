@@ -1,10 +1,3 @@
----
-title: grpc-server
-date: '2020-02-08T16:40:52.000Z'
-tags:
-  - golang
----
-
 # grpc server 的源码分析
 
 grpc 的server 是处理http 链接的入口， client 传递的数据最终都是被传递到了server 端
