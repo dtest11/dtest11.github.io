@@ -24,3 +24,15 @@
 ```text
 select * from performance_schema.data_locks\G;
 ```
+
+
+*  [层高计算](https://cloud.tencent.com/developer/article/2121055)
+* 索引下推：联合索引
+
+
+
+
+pt-online-schema-change -uroot -p 123456 --execute --alter "MODIFY COLUMN person_name varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名称';" D=hello,t=person 
+
+
+select * from person where id = 1 for update;
