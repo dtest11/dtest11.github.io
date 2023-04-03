@@ -27,3 +27,8 @@ kubectl get pods --all-namespaces -o=jsonpath='{range .items\[_\]}{"\n"}{.metada
 
 kubectl logs  -c 
 
+
+## 重装
+kubeadm reset
+
+
