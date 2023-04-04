@@ -767,6 +767,11 @@ kubectl delete deployment nginx-app
 
 ### yaml方式
 
+
+```bash
+kubectl config set-context --current --namespace=kube-system
+```
+
 # 操作命令补充说明
 
 ## 1. create和apply的异同点
