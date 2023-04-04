@@ -12,7 +12,7 @@
             - [latestTimeCatchTheBus](two_pointers/latestTimeCatchTheBus.md)
           
 - [sort](sort/sort.md)
-    - [rust](rust_implement/src/sort/sort.md)
+    - [go-sort](sort/sort.md)
 - [进制转换](rust_implement/src/diget/mod.md)
     - [Excel 表列序号](diget/titleToNumber.md)
 - [动态规划](dynamic_programming/dynamic_programming.md)
