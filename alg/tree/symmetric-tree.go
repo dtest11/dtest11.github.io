@@ -5,7 +5,7 @@ func isSymmetric(root *TreeNode) bool {
 		return true
 	}
 
-	return isMirror(root, root)
+	return isMirror(root.Left, root.Right)
 }
 
 func isMirror(r1, r2 *TreeNode) bool {
