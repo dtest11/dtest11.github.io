@@ -2,6 +2,7 @@
 - [network namespace](network.md)
 - [面试题目](interview.md)
 - [K8s操作命令](K8s操作命令.md)
+- [leader 选住， k8s提供了lease的资源， 每次pod 尝试写入，写入成功](https://github.com/dtest11/awesomeProject/blob/master/k8s/leader_election/leader_elect.go)
 
 ## deploy
 * kubespray

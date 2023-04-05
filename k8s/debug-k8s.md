@@ -1,13 +1,13 @@
 ```text
 
-docker run  --restart=unless-stopped \
+docker run -d --restart=unless-stopped \
   -p 80:80 -p 443:443 \
   --privileged \
   rancher/rancher:v2.6.9
   
 ```
+ docker exec -ti interesting_brown reset-password
 
-![Alt text](https://lin19999.oss-cn-beijing.aliyuncs.com/flower.svg)
 
 ## 查看pod 状态
 

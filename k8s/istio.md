@@ -8,4 +8,21 @@ ADS是一种xDS的实现, 它基于gRPC长连接。 gRPC的实现是承载在HTT
 - 调试
 - 安全
 - 可观测性
+- 故障注入
 
+* bug
+请求中断
+
+* [install](https://istio.io/latest/zh/docs/setup/getting-started/)
+
+```bash
+ kubectl get ingress --all-namespaces
+ kubectl get gateway --all-namespaces
+
+ ```
+ 卸载
+ ```bash
+ https://istio.io/latest/zh/docs/setup/install/istioctl/
+ ```
+
+virtual service 搭配gateway 使用，virtual service 定义各种规则，gateway选择pod
