@@ -26,3 +26,13 @@ ADS是一种xDS的实现, 它基于gRPC长连接。 gRPC的实现是承载在HTT
  ```
 
 virtual service 搭配gateway 使用，virtual service 定义各种规则，gateway选择pod
+
+
+kubectl get namespace -L istio-injection
+ kubectl label namespace default istio-injection-
+  kubectl get pod --show-labels 
+
+
+  config 生成
+  https://stackoverflow.com/questions/47770676/how-to-create-a-kubectl-config-file-for-serviceaccount
+  
