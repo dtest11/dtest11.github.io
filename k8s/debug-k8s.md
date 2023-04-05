@@ -1,7 +1,7 @@
 ```text
 
 docker run -d --restart=unless-stopped \
-  -p 80:80 -p 443:443 \
+  -p 8090:80 -p 444:443 \
   --privileged \
   rancher/rancher:v2.6.9
   

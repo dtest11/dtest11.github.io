@@ -5,6 +5,7 @@
 - [leader 选住， k8s提供了lease的资源， 每次pod 尝试写入，写入成功](https://github.com/dtest11/awesomeProject/blob/master/k8s/leader_election/leader_elect.go)
 
 ## deploy
+[kubekey](https://kubesphere.io/zh/docs/v3.3/installing-on-linux/introduction/kubekey/)
 * kubespray
 * [sealer](https://github.com/sealerio/sealer#quick-start)
 ##  istio
