@@ -7,3 +7,5 @@
     * [https://leetcode.cn/problems/MPnaiL/solution/by-flix-0h27/](https://leetcode.cn/problems/MPnaiL/solution/by-flix-0h27/)
 
     *  [https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485141&idx=1&sn=0e4583ad935e76e9a3f6793792e60734&scene=21#](https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247485141&idx=1&sn=0e4583ad935e76e9a3f6793792e60734&scene=21#)
+
+[剑指 Offer II 020. 回文子字符串的个数](https://leetcode.cn/problems/a7VOhD/)
