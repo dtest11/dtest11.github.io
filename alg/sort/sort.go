@@ -1,20 +1,18 @@
 package sort
 
 import (
-	"fmt"
 	"golang.org/x/exp/constraints"
 )
 
-func Bubble[T constraints.Ordered](data []T) {
-	for i := 0; i < len(data); i++ {
-		for j := 1; j < len(data)-i; j++ {
-			compare := data[j] < data[j-1]
-			if compare {
-				data[j], data[j-1] = data[j-1], data[j]
+func Bubble(array []int) []int {
+	for i := 0; i < len(array); i++ {
+		for j := 0; j < len(array)-i-1; j++ {
+			if array[j] > array[j+1] {
+				array[j+1], array[j] = array[j], array[j+1]
 			}
 		}
-		fmt.Println("sort round:", data)
 	}
+	return array
 }
 
 func quick[v constraints.Ordered](nums []v, l int, r int) {
@@ -75,3 +73,27 @@ func merge[T constraints.Ordered](a []T, b []T) []T {
 	}
 	return final
 }
+
+/**
+
+package main
+
+import "fmt"
+
+func main() {
+
+	remain := len(input) % 8
+	c := len(input) / 8 // 平均分割数组里面的元素
+	for i := 0; i < c; i++ {
+		fmt.Printf("%s\n", input[i*8:i*8+8])
+	}
+	if remain != 0 {
+		fmt.Print(input[len(input)-remain:])
+		for i := 0; i < 8-remain; i++ {
+			fmt.Print(zero)
+		}
+		fmt.Println()
+	}
+}
+
+**/

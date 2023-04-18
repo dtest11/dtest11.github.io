@@ -36,3 +36,124 @@ pt-online-schema-change -uroot -p 123456 --execute --alter "MODIFY COLUMN person
 
 
 select * from person where id = 1 for update;
+ 
+
+ # insert into 
+
+ ```sql
+ insert into T(id,name) 
+   select id,name from T2
+
+```
+
+```sql
+insert into T(id,name) 
+   select 1,3 from dual 
+      where not exists(select * from T3);
+```
+
+# create index
+```sql
+create unique index  uniq_idx_firstname on actor (first_name);
+create index idx_lastname on actor (last_name);
+```
+
+# create view
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+# index
+```sql
+select *
+from salaries
+force index (idx_emp_no)
+where emp_no=10005
+```
+
+# alter
+```sql
+alter table actor add create_date datetime not null default '2020-10-01 00:00:00';
+
+CREATE TRIGGER trig1 AFTER INSERT
+ON employees_test FOR EACH ROW
+ INSERT INTO audit VALUES(new.id,new.name);
+
+
+UPDATE titles_test
+SET emp_no = REPLACE(emp_no,
+                     10001,
+                     10005)
+where id = 5;
+
+rename table A to B;
+
+
+alter table audit add constraint foreign key (emp_no) references  employees_test(id)
+
+//返回部分字段
+LEFT(s,n)返回字符串 s 的前 n 个字符
+RIGHT(s,n)返回字符串 s 的后 n 个字符
+第一种：（right）
+
+select first_name
+from employees
+order by right(first_name,2)
+第二种：（substr）
+select first_name from employees  order by substr(first_name,-2)
+
+第三种：（substring）
+
+select first_name from employees  order by substring(first_name,-2)
+
+
+group_concat（）函数将group by产生的同一个分组中的值连接起来，返回一个字符串结果
+
+select dept_no, group_concat(emp_no) as employees
+from dept_emp
+group by dept_no
+
+
+SELECT (SUM(salary) - MAX(salary) - MIN(salary)) / (COUNT(1) - 2) as avg_salary
+FROM salaries
+where to_date = '9999-01-01';
+
+#分页查询employees表，每5行一页，返回第2页的数据
+LIMIT 语句结构： LIMIT X,Y 
+Y ：返回几条记录
+X：从第几条记录开始返回（第一条记录序号为0，默认为0）
+select *
+from employees
+limit 5 , 5
+
+#窗口函数
+select emp_no,
+    salary,
+    sum(salary) over(
+        order by emp_no
+    )
+from salaries;
+
+
+
+
+```
+
+获取row number
+```sql
+
+select emp_no,
+    row_number() OVER (ORDER BY id)
+from salaries;
+```
+
+having
+```sql
+SELECT number
+from grade
+GROUP BY number
+HAVING(count(number)) >= 3;
+```
