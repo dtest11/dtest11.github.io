@@ -14,6 +14,6 @@ deploy: book
         git push origin gh-pages
 build:
 	rm -rf book && go  run github.com/dtest11/alg/generator
-serve:
+run:
 	rm -rf book && go  run github.com/dtest11/alg/generator
 	cd book && python3 -m http.server

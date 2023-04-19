@@ -13,7 +13,7 @@
           
 - [sort](sort/sort.md)
     - [go-sort](sort/sort.md)
-- [进制转换](rust_implement/src/diget/mod.md)
+- [进制转换](diget/mod.md)
     - [Excel 表列序号](diget/titleToNumber.md)
 - [动态规划](dynamic_programming/dynamic_programming.md)
     - [最大子序和](dynamic_programming/maximum-subarray.md)

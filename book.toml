@@ -1,9 +1,0 @@
-[book]
-title = "Example book"
-description = "The example book covers examples."
-src = "."
-
-[output.html.playground]
-runnable = false
-[output.html.fold]
-enable = true
