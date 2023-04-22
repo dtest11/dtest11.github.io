@@ -23,6 +23,7 @@
     - [买卖股票的最佳时机](dynamic_programming/best-time-to-buy-and-sell-stock.md)
     - [house-robber](dynamic_programming/house-robber.md)
     - [背包问题](dynamic_programming/背包问题变形1.md)
+    - [最长回文子串](dynamic_programming/最长回文子串.md)
 
 -  [binary_search](binary_search/binary_serach.md)
 -  [幂运算](pow/pow.md)

@@ -1,6 +1,7 @@
 package dynamic_programming
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -49,4 +50,10 @@ func Test_rob(t *testing.T) {
 	t.Log(robCircle([]int{1, 2, 3, 1}))
 	t.Log(robCircle([]int{2, 3, 2}))
 	t.Log(robCircle([]int{1, 2, 3}))
+}
+
+func Test_longestPalindrome(t *testing.T) {
+	//s := "babad"
+	//assert.Equal(t, "aba", longestPalindrome(s))
+	fmt.Println(longestPalindrome("cbbd"))
 }

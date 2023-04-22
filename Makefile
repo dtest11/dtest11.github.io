@@ -1,4 +1,4 @@
-#SHELL := /bin/zsh
+SHELL := /bin/zsh
 
 .PHONY: deploy
 deploy: book
