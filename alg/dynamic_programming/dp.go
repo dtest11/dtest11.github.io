@@ -55,6 +55,20 @@ func coinChange(amount int, coins []int) int {
 	return dp[amount+1]
 }
 
-func longeset() {
-
+//lint:file-ignore U1000 Ignore all unused code
+func isSubsequence(s string, t string) bool {
+	if len(s) == 0 {
+		return true
+	}
+	si := 0
+	ti := 0
+	for si < len(s) || ti < len(t) {
+		if s[si] == t[ti] {
+			si++
+			ti++
+			continue
+		}
+		ti++
+	}
+	return si == len(s)-1
 }

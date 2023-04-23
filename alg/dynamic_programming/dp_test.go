@@ -3,6 +3,8 @@ package dynamic_programming
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"strconv"
+	"strings"
 	"testing"
 )
 
@@ -56,4 +58,62 @@ func Test_longestPalindrome(t *testing.T) {
 	//s := "babad"
 	//assert.Equal(t, "aba", longestPalindrome(s))
 	fmt.Println(longestPalindrome("cbbd"))
+}
+
+func Test_hello(t *testing.T) {
+	var input string
+	fmt.Scanf("%s\n", &input)
+	//var input = `A10;S20;W10;D30;X;A1A;B10A11;;A10;`
+	data := strings.Split(input, ";")
+	var result Point
+	for _, v := range data {
+		point := parsePoint(v)
+		if point.X != 0 {
+			result.X = result.X + point.X
+		} else if point.Y != 0 {
+			result.Y = result.Y + point.Y
+		} else {
+			continue
+		}
+	}
+	fmt.Println(result.X, result.Y)
+}
+
+type Point struct {
+	X int
+	Y int
+}
+
+func parsePoint(str string) Point {
+	if len(str) == 0 {
+		return Point{}
+	}
+	symbol := str[0]
+	var point Point
+
+	switch symbol {
+	case 'A':
+		point.X = -1
+	case 'D':
+		point.X = 1
+	case 'W':
+		point.Y = 1
+	case 'S':
+		point.Y = -1
+	default:
+		return Point{}
+	}
+	var temp string
+	for i := 1; i < len(str); i++ {
+		if str[i] >= '0' && str[i] <= '9' {
+			temp += string(str[i])
+			continue
+		}
+		return Point{}
+	}
+	num, _ := strconv.Atoi(temp)
+	if point.X != 0 {
+		return Point{X: num * point.X}
+	}
+	return Point{Y: num * point.Y}
 }
