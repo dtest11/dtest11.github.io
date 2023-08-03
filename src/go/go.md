@@ -1,5 +1,4 @@
 # golang
-
 - [defer](defer.md)
 - [new/make](go_new_make.md)
 - [error](golang-errors.md)

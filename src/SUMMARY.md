@@ -2,6 +2,8 @@
 - [sys](sys/sys.md)
 - [message queue](message_queue/message_queue.md)
 - [go](go/go.md)
+    - [defer](go/defer.md)
+    - [new/make](go/go_new_make.md)
 - [tcp](tcp/tcp.md)
 - [database](database/database.md)
 - [redis](redis/redis.md)
