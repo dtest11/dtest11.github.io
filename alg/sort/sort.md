@@ -1,3 +1,0 @@
-```go
-{{#include sort.go}}
-```

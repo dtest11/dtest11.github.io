@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fuckyou
+spec:
+  selector:
+    matchLabels:
+      app: fuckyou
+  replicas: 6
+  template:
+    metadata:
+      labels:
+        app: fuckyou
+    spec:
+      containers:
+        - name: fuckyou
+          image: dtest11/demo:net
+          ports:
+            - containerPort: 80

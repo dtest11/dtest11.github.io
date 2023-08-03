@@ -1,8 +1,3 @@
----
-title: Tcpdump
-date: '2021-03-05T04:47:38.000Z'
-draft: false
----
 
 # tcpdump
 

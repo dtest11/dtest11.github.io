@@ -1,1 +1,0 @@
-https://github.com/jgraph/drawio-desktop/releases/tag/v18.1.3
