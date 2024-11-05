@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Japanese Kana Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .kana-display {
+            font-size: 5em;
+            margin: 20px;
+        }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .checkbox-label {
+            font-size: 1.2em;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Japanese Kana Practice</h1>
+    <div class="kana-display" id="kanaDisplay">あ</div>
+
+    <div class="controls">
+        <label class="checkbox-label">
+            <input type="checkbox" id="autoPlayVoice"> Auto Play Voice
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox" id="autoShowRomaji"> Auto Show Romaji
+        </label>
+    </div>
+    <div id="romajiDisplay" style="display: none;">a</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
